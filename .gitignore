@@ -20,6 +20,7 @@ dist/
 .vscode/
 .idea/
 .DS_Store
+.github/copilot-instructions.md
 
 # Docker
 *.override.yml
