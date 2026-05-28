@@ -11,6 +11,8 @@ class MovieResult(BaseModel):
     release_date: str | None = None
     vote_average: float | None = None
 
+    model_config = {"from_attributes": True}
+
 
 class MovieSearchResponse(BaseModel):
     page: int
