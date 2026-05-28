@@ -67,7 +67,7 @@ npm run dev
 | 3 | MySQL schema & SQLAlchemy models | ✅ Done |
 | 4 | Auth routes (register, login — JWT) | ✅ Done |
 | 5 | TMDB API integration (search, detail) | ✅ Done |
-| 6 | Reviews & favourites routes | 🔄 In progress |
+| 6 | Reviews & favourites routes | ✅ Done |
 | 7 | React + Vite scaffold | ⬜ Not started |
 | 8 | Frontend: Auth pages & context | ⬜ Not started |
 | 9 | Frontend: Movie search & detail pages | ⬜ Not started |
