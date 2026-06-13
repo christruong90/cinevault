@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import Movies from './pages/Movies'
 import MovieDetail from './pages/MovieDetail'
 import Favourites from './pages/Favourites'
+import Navbar from './components/Navbar'
 
 function ProtectedRoute({ children }) {
   const { token } = useAuth()
@@ -15,6 +16,7 @@ function ProtectedRoute({ children }) {
 function App() {
   return (
     <AuthProvider>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/movies" />} />
         <Route path="/login" element={<Login />} />

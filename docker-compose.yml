@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cinevault
+      MYSQL_USER: cinevault
+      MYSQL_PASSWORD: cinevaultpass
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: mysql+pymysql://cinevault:cinevaultpass@db:3306/cinevault
+      SECRET_KEY: changeme-in-production
+      TMDB_API_KEY: ${TMDB_API_KEY}
+      ALLOWED_ORIGINS: http://localhost
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000'
+const BASE_URL = '/api'
 
 export async function searchMovies(query, page = 1, token) {
   const res = await fetch(

@@ -71,7 +71,7 @@ npm run dev
 | 7 | React + Vite scaffold | ✅ Done |
 | 8 | Frontend: Auth pages & context | ✅ Done |
 | 9 | Frontend: Movie search & detail pages | ✅ Done |
-| 10 | Frontend: Reviews & favourites UI | ⬜ Not started |
+| 10 | Frontend: Reviews & favourites UI | ✅ Done |
 | 11 | Docker Compose + deployment configs | ⬜ Not started |
 
 ## Environment Variables
