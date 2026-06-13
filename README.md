@@ -69,7 +69,7 @@ npm run dev
 | 5 | TMDB API integration (search, detail) | ✅ Done |
 | 6 | Reviews & favourites routes | ✅ Done |
 | 7 | React + Vite scaffold | ✅ Done |
-| 8 | Frontend: Auth pages & context | ⬜ Not started |
+| 8 | Frontend: Auth pages & context | ✅ Done |
 | 9 | Frontend: Movie search & detail pages | ⬜ Not started |
 | 10 | Frontend: Reviews & favourites UI | ⬜ Not started |
 | 11 | Docker Compose + deployment configs | ⬜ Not started |
