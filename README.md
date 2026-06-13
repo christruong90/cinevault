@@ -72,7 +72,7 @@ npm run dev
 | 8 | Frontend: Auth pages & context | ✅ Done |
 | 9 | Frontend: Movie search & detail pages | ✅ Done |
 | 10 | Frontend: Reviews & favourites UI | ✅ Done |
-| 11 | Docker Compose + deployment configs | ⬜ Not started |
+| 11 | Docker Compose + deployment configs | ✅ Done |
 
 ## Environment Variables
 
