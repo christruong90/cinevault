@@ -120,7 +120,7 @@ To stop: `Ctrl+C`, then `docker compose down`
 | 9 | Frontend: Movie search & detail pages | ✅ Done |
 | 10 | Frontend: Reviews & favourites UI | ✅ Done |
 | 11 | Docker Compose + deployment configs | ✅ Done |
-| 12 | Docker build optimisation (.dockerignore) | ⬜ Not started |
+| 12 | Docker build optimisation (.dockerignore) | ✅ Done |
 | 13 | README: Docker & local dev setup docs | ✅ Done |
 | 14 | Frontend: Styling overhaul | ⬜ Not started |
 | 15 | AI: Recommended movies based on favourites | ⬜ Not started |
