@@ -123,7 +123,7 @@ To stop: `Ctrl+C`, then `docker compose down`
 | 12 | Docker build optimisation (.dockerignore) | ✅ Done |
 | 13 | README: Docker & local dev setup docs | ✅ Done |
 | 14 | Frontend: Styling overhaul | ✅ Done |
-| 15 | AI: Recommended movies based on favourites | ⬜ Not started |
+| 15 | AI: Recommended movies based on favourites | ✅ Done |
 | 16 | Deploy to Railway | ✅ Done |
 
 ## Environment Variables
