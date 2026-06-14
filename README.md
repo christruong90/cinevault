@@ -36,9 +36,23 @@ cinevault/
 └── docker-compose.yml
 ```
 
-## Getting Started
+## Live Demo
 
-### Backend
+- **Frontend**: https://cinevault-frontend-production.up.railway.app
+- **API**: https://cinevault-production-3b6a.up.railway.app/docs
+
+## Running Locally
+
+### Prerequisites
+- MySQL installed and running:
+  ```bash
+  mysql.server start
+  ```
+- Python 3.12+
+- Node.js 20+
+- TMDB API key — free at https://www.themoviedb.org/settings/api
+
+### 1. Backend
 
 ```bash
 cd backend
@@ -48,15 +62,48 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-API docs available at `http://localhost:8000/docs`
+Create `backend/.env`:
+```
+DATABASE_URL=mysql+pymysql://root:@localhost:3306/cinevault
+SECRET_KEY=any-random-string
+TMDB_API_KEY=your-tmdb-api-key
+```
 
-### Frontend
+API runs at `http://localhost:8000` — docs at `http://localhost:8000/docs`
+
+### 2. Frontend
 
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+
+Frontend runs at `http://localhost:5173`. API calls are automatically proxied to the backend via Vite — no extra config needed.
+
+## Running with Docker
+
+### Prerequisites
+- Docker Desktop running
+- A root `.env` file with your TMDB API key:
+
+```
+TMDB_API_KEY=your-tmdb-api-key
+```
+
+### Start all services
+
+```bash
+docker compose up --build
+```
+
+This starts MySQL, the FastAPI backend, and the Nginx frontend together.
+
+- Frontend: `http://localhost`
+- Backend API: `http://localhost:8000`
+- API docs: `http://localhost:8000/docs`
+
+To stop: `Ctrl+C`, then `docker compose down`
 
 ## Build Progress
 
@@ -74,7 +121,7 @@ npm run dev
 | 10 | Frontend: Reviews & favourites UI | ✅ Done |
 | 11 | Docker Compose + deployment configs | ✅ Done |
 | 12 | Docker build optimisation (.dockerignore) | ⬜ Not started |
-| 13 | README: Docker & local dev setup docs | ⬜ Not started |
+| 13 | README: Docker & local dev setup docs | ✅ Done |
 | 14 | Frontend: Styling overhaul | ⬜ Not started |
 | 15 | AI: Recommended movies based on favourites | ⬜ Not started |
 | 16 | Deploy to Railway | ✅ Done |
