@@ -73,6 +73,10 @@ npm run dev
 | 9 | Frontend: Movie search & detail pages | ✅ Done |
 | 10 | Frontend: Reviews & favourites UI | ✅ Done |
 | 11 | Docker Compose + deployment configs | ✅ Done |
+| 12 | Docker build optimisation (.dockerignore) | ⬜ Not started |
+| 13 | README: Docker & local dev setup docs | ⬜ Not started |
+| 14 | Frontend: Styling overhaul | ⬜ Not started |
+| 15 | AI: Recommended movies based on favourites | ⬜ Not started |
 
 ## Environment Variables
 
