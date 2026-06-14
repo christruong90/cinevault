@@ -125,6 +125,19 @@ To stop: `Ctrl+C`, then `docker compose down`
 | 14 | Frontend: Styling overhaul | ✅ Done |
 | 15 | AI: Recommended movies based on favourites | ✅ Done |
 | 16 | Deploy to Railway | ✅ Done |
+| 17 | Reviews: show username, timestamp, edit button | ⬜ Not started |
+| 18 | UI: Toast notifications, skeleton loaders, page transitions | ⬜ Not started |
+| 19 | UI: Dark/light mode toggle | ⬜ Not started |
+| 20 | Feature: User profile page (stats, review count, favourites) | ⬜ Not started |
+| 21 | Feature: My Reviews page | ⬜ Not started |
+| 22 | Feature: Search filters (genre, year, rating) | ⬜ Not started |
+| 23 | Feature: Movie trailer embed (YouTube via TMDB) | ⬜ Not started |
+| 24 | Feature: Similar movies on detail page | ⬜ Not started |
+| 25 | Feature: Watchlist (separate from favourites) | ⬜ Not started |
+| 26 | AI: Review summary — Claude summarises all reviews | ⬜ Not started |
+| 27 | AI: Mood-based search — type a mood, Claude translates to queries | ⬜ Not started |
+| 28 | UI: Mobile responsive layout | ⬜ Not started |
+| 29 | UI: Movie detail hero banner (TMDB backdrop image) | ⬜ Not started |
 
 ## Environment Variables
 
