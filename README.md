@@ -77,6 +77,7 @@ npm run dev
 | 13 | README: Docker & local dev setup docs | ⬜ Not started |
 | 14 | Frontend: Styling overhaul | ⬜ Not started |
 | 15 | AI: Recommended movies based on favourites | ⬜ Not started |
+| 16 | Deploy to Railway | ✅ Done |
 
 ## Environment Variables
 
