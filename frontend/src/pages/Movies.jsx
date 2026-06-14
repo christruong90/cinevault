@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { searchMovies } from '../api/movies'
+import { getRecommendations } from '../api/recommendations'
 import { useAuth } from '../context/AuthContext'
 import MovieCard from '../components/MovieCard'
 import Spinner from '../components/Spinner'
@@ -7,10 +8,26 @@ import Spinner from '../components/Spinner'
 function Movies() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
+  const [recommendations, setRecommendations] = useState([])
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [recsLoading, setRecsLoading] = useState(true)
   const [searched, setSearched] = useState(false)
   const { token } = useAuth()
+
+  useEffect(() => {
+    async function fetchRecommendations() {
+      try {
+        const data = await getRecommendations(token)
+        setRecommendations(data)
+      } catch (err) {
+        // silently fail — recommendations are optional
+      } finally {
+        setRecsLoading(false)
+      }
+    }
+    fetchRecommendations()
+  }, [token])
 
   async function handleSearch(e) {
     e.preventDefault()
@@ -30,6 +47,30 @@ function Movies() {
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1.5rem' }}>
+
+      {/* Recommendations section */}
+      {recsLoading && <Spinner />}
+      {!recsLoading && recommendations.length > 0 && (
+        <div style={{ marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '600', marginBottom: '0.4rem' }}>
+            Recommended for You
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
+            Based on your favourites
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+            gap: '1.25rem',
+          }}>
+            {recommendations.map(movie => (
+              <MovieCard key={movie.id} movie={movie} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Search section */}
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '0.5rem' }}>
           Discover Movies
